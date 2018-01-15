@@ -21,13 +21,19 @@ router.get('/', function(req, res, next) {
    
   router.post('/process_post', urlencodedParser, function (req, res) {
     var listado;
-    console.log(req.body);
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    date = `${year}-${month}-${day}`;
+    
     qr = {
       url: req.body.url,
       creador: req.body.personas,
       tema: req.body.temas,
-      fecha: req.body.fechas
+      fecha: req.body.fechas || date
    };
+   console.dir(qr)
    mysqlConnect('INSERT INTO lista_videos (url, creador, tema, fecha) values (?,?,?,?)',
                 [qr.url, qr.creador, qr.tema, qr.fecha], function(err, rows) {
    					if (err) throw err	
