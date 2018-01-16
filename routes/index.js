@@ -33,6 +33,10 @@ router.get('/', function(req, res, next) {
       tema: req.body.temas,
       fecha: req.body.fechas || date
    };
+   
+   
+   
+   
    console.dir(qr)
    mysqlConnect('INSERT INTO lista_videos (url, creador, tema, fecha) values (?,?,?,?)',
                 [qr.url, qr.creador, qr.tema, qr.fecha], function(err, rows) {
