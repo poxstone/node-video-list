@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>buscador</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Buscador</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-Cur
-    
   </head>
-  <body>
-    <body>
-   <div class="alert alert-primary" role="alert">
-  This is a primary alert—check it out!
-</div>
-     <P ALIGN=left>
-   <center>
+<body>
+<header>
+    <b class="titlef">¡Guarda Videos!</b>
+   <nav>
+       <a class="options">Top videos</a>
+   </nav>
+ </header>
+  
+    <div> 
       <link href="/static/style.css" rel="stylesheet" type="text/css" ></link>
       <form action = "/process_post/" id="formulario" method = "POST" >
-      <h2> guarda tu video </h2>
-         <input type= 'url' name='url'  id="url"   placeholder='agrega la direccion del video' required/>  <br> </br>
-          <input type= 'text' name='personas' id="personas"     placeholder='quien creo el video' /> <br>  </br>      
-         <input type= 'text' name='temas' id="temas"     placeholder='agrega los temas relacionados' /> <br> </br>
+      <h2 class="gv"> Guarda tu video </h2>
+         <input type= 'url' name='url'  id="url"   placeholder='Agrega la direccion del video' required/>  <br> </br>
+         <input type= 'text' name='personas' id="personas"     placeholder='Quién creó el video' /> <br>  </br>      
+         <input type= 'text' name='temas' id="temas"     placeholder='Agrega los temas relacionados' /> <br> </br>
          <input type= 'date' name='fechas'  id="fechas"  /> <br> </br>
-          
-         <button type="submit ">enviar</button> <br> </br> 
+         <button class="button" type="submit" >+</button> <br> </br> 
       </form>
-    </center>
-   
-   <hr>
+    </div> 
+ <div class="ft">     
    <form action="/search" method="get" class="form 2">
-   <h2> lista de videos </h2>
-       <label for="texto">Buscar:<label>
-       <input id="texto" type="text" name="texto" id="imput2" placeholder="personas, temas, o urls..."  />
-       <button type="submit">buscar</button>
+   <h2 class="lista"> Lista de videos </h2>
+       <label class="bar"for="texto">Filtrar:<label>
+       <input class="Busqueda" id="texto" type="text" name="texto" id="imput2" placeholder="Personas, temas, o urls..."  />
+       <button class="search" type="submit">Buscar</button>
    </form>
-  <hr>
-  <table border="1">
+  <table class="tab" border="white" >
      <thead>
      	<tr>
-     		<th>id</th>
-     		<th>url</th>
-     		<th>creador</th>
-     		<th>tema</th>
-     		<th>fecha</th>
+     		<th>Id</th>
+     		<th>Url</th>
+     		<th>Creador</th>
+     		<th>Tema</th>
+     		<th>Fecha</th>
      	</tr>
      </thead>
      <tbody>
@@ -67,8 +59,9 @@ Cur
    			 <%= listado[i].fecha %>
    			</td>
    		</tr>
-	<% } %>     
-     <tbody>
-   </table> 
-  </body>
+	    <% } %>     
+      <tbody>
+     </table> 
+    <div>
+   </body>  
 </html>
