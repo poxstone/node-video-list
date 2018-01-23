@@ -2,35 +2,38 @@
 <html>
   <head>
     <title>Buscador</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-<body>
-<header>
-    <b class="titlef">¡Guarda Videos!</b>
-   <nav>
-       <a class="options">Top videos</a>
-   </nav>
+<body id="body">
+  <header>
+       <b class="titulo">¡Guarda Videos!</b>
+      <nav>
+        <a class="menu">Top videos</a>
+       <a class="nuevo" href="#body">Nuevo</a>
+    </nav>
  </header>
   
-    <div> 
-      <link href="/static/style.css" rel="stylesheet" type="text/css" ></link>
-      <form action = "/process_post/" id="formulario" method = "POST" >
-      <h2 class="gv"> Guarda tu video </h2>
-         <input type= 'url' name='url'  id="url"   placeholder='Agrega la direccion del video' required/>  <br> </br>
-         <input type= 'text' name='personas' id="personas"     placeholder='Quién creó el video' /> <br>  </br>      
-         <input type= 'text' name='temas' id="temas"     placeholder='Agrega los temas relacionados' /> <br> </br>
+  <div> 
+    <link href="/static/style.css" rel="stylesheet" type="text/css" ></link>
+       <form action = "/process_post/" id="formulario" method = "POST" >
+        <a class="cerrar" href="#">X</a>
+         <h2 class="tituloguardar"> Guarda tu video </h2>
+         <input type= 'url' name='url'  id="url"   placeholder=' Agrega la dirección del video' required/>  <br> </br>
+         <input type= 'text' name='personas' id="personas"     placeholder=' Quién creó el video' /> <br>  </br>      
+         <input type= 'text' name='temas' id="temas"     placeholder=' Agrega los temas relacionados' /> <br> </br>
          <input type= 'date' name='fechas'  id="fechas"  /> <br> </br>
          <button class="button" type="submit" >+</button> <br> </br> 
       </form>
     </div> 
- <div class="ft">     
-   <form action="/search" method="get" class="form 2">
-   <h2 class="lista"> Lista de videos </h2>
+  <div class="fondo">     
+     <form action="/search" method="get" class="form 2">
+       <h2 class="lista"> Lista de videos </h2>
        <label class="bar"for="texto">Filtrar:<label>
        <input class="Busqueda" id="texto" type="text" name="texto" id="imput2" placeholder="Personas, temas, o urls..."  />
        <button class="search" type="submit">Buscar</button>
-   </form>
-  <table class="tab" border="white" >
+     </form>
+  <table id="tabla" border="#FFFF00">
      <thead>
      	<tr>
      		<th>Id</th>
@@ -40,7 +43,7 @@
      		<th>Fecha</th>
      	</tr>
      </thead>
-     <tbody>
+    <tbody>
       <% for(var i=0; i < listado.length; i++) {%>
    		<tr>
    			<td>
@@ -61,7 +64,10 @@
    		</tr>
 	    <% } %>     
       <tbody>
-     </table> 
-    <div>
+     </table>
+           <footer>
+         © 2018
+ </footer>
+    </div>
    </body>  
 </html>
