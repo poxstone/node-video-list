@@ -55,8 +55,18 @@ router.get('/search', urlencodedParser, function (req, res) {
 	  resultado = {listado : rows};
 	  res.render('index', resultado );
    });
-      
-      
+
+});
+
+router.get('/delete', urlencodedParser, function (req, res) {
+   var resultado;
+   var texto = req.query.texto;
+   mysqlConnect(`DELETE FROM lista_videos WHERE id=${req.body.id};"`, null, function(err, rows, fields) {
+	  if (err) throw err;
+	  resultado = {listado : rows};
+	  res.render('index', resultado );
+   });
+
 });
 
 

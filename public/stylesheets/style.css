@@ -1,13 +1,21 @@
 .titulo {
-	font-size: 40px;
-	padding-left: 7.3%;
+	font-family: roboto, arial, sans-serif;
+	padding-top: 0.5%;
 	color: white;
+	margin: 0;
+	text-align: center;
 }
 
 header{
-	background-color: #303F9F;
+	background-color: #000000;
 	height: 100px;
 	width: 100%;
+	top:0;
+	right:0;
+	left:0;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 .menu {
@@ -18,11 +26,10 @@ header{
 	padding-top: 1.5%;
 }
 
-
 body {
     color: black;
     padding: 0px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px roboto, Helvetica, Arial, sans-serif;
     margin: 0px;
     overflow: hidden;
 }
@@ -30,24 +37,32 @@ body {
 .tituloguardar {
 	text-align: center;
 	color: white;
-	font-size: 26px;
-	margin-left: 12%;
+	font-size: 36px;
+	margin-left: 0.5%;
+	margin-bottom: 5%;
+	margin-top: 60px;
 }
 
 .lista{
-	font-family: Arial;
+	font-family: roboto;
 	font-size: 30px;
-	padding-left: 10%;
 	overflow:auto;
+	margin-bottom: 0%;
+	color: white;
+}
+
+a {
+	color: blue;
 }
 
 #formulario{
-    width: 25%;
+    width: 24.5%;
     height: calc(100vh - 10px);
     margin: auto;
-    background: #BBDEFB;
+    background: #212121;
     float: right;
     display: none;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.7);
 }
 
 #body:target #formulario{
@@ -56,145 +71,37 @@ body {
 	transform: translateY(0px);
 }
 
-#url,
-#personas,
-#temas,
-#fechas{
-    width: 70%;
-    height: 5%;
-    margin: 0px 0px 0px 50px;
-    border-radius: 10px 10px;
-    border: 3px solid;
-    border-color: #303f9f;
-    outline: none;
-    box-shadow: 0 2.5px rgba(0, 0, 0, 0.8)
+.mdl-data-table {
+	width: 100%;
 }
-
-.button {
-	margin-left: 43%;
-	margin-top: 10%;
-	padding: 7px 17px;
-	font-size: 30px;
-	cursor: pointer;
-    color: #FFFFFF;
-	background-color: #F44336;
-	border: none;
-	border-radius: 360px;
-	box-shadow: 0 5px rgba(0, 0, 0, 0.4);
-	outline: none;
-}
-
-.button:hover {
-	background-color: #C62828;
-}
-
-.button:active {
-    background-color: #C62828;
-    box-shadow: 0 7px rgba(0, 0, 0, 0.6);
-    transform: translateY(4px);
-}
-
-#tabla {
-	font-size: 16px;
-	margin-left: 10%;
-	margin-top: 5%;
-	border: solid 4px #303F9F;
-	border-collapse: collapse;
-}
-
-#tabla td, #tabla th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-
-#tabla tr:nth-child(even){background-color: #f2f2f2;}
-
-#tabla tr:hover {background-color: #ddd;}
-
-#tabla th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #303F9F;
-    color: white;
-}
-
 
 .fondo {
-	height: calc(100vh - 10px);
-	width: 75%;
-	background-color: #42A5F5;
+	height: calc(100vh - 10px);	
+	background-color: #484848;
 	overflow-x: hidden;
 	overflow-y: auto;
+	padding-left: 120px;
+	padding-right: 120px;
+	box-sizing: border-box;
 }
+
 .bar{
 	padding-left:10%;
 	font-size: 20px;
 }
 
 th {
-	background-color: yellow;
+	background-color: grey;
 }
 
 .Busqueda {
 	width: 40%;
 	height: 30px;
 	border-radius: 10px 10px;
-    border: 3px solid #303f9f;
+    border: 1.5px solid #3D5B58;
     padding-left: 1%;
     outline: none;
     box-shadow: 0 3px rgba(0, 0, 0, 0.5);
-}
-
-.search {
-    padding: 4px 8px;
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color:  #FFFFFF;
-    background-color: #F44336;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 5px rgba(0, 0, 0, 0.4);
-}
-
-.search:hover {
-	background-color: #C62828 ;
-}
-
-.search:active {
-    background-color: #C62828;
-    box-shadow: 0 5px rgba(0, 0, 0, 0.6);
-    transform: translateY(4px);
-}
-.nuevo {
-	padding: 4px 8px;
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color:  #FFFFFF;
-    background-color: #F44336;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 5px rgba(0, 0, 0, 0.4);
-    float: right;
-    margin-left: 4%;
-    margin-right: 4%;
-    margin-top: 0.5%;
-    text-decoration: none;
-}
-
-.nuevo:hover {
-	background-color: #C62828;
-}
-
-.nuevo:active {
-    background-color: #C62828;
-    box-shadow: 0 7px rgba(0, 0, 0, 0.6);
-    transform: translateY(4px);
 }
 
 .cerrar {
@@ -204,7 +111,7 @@ th {
     cursor: pointer;
     outline: none;
     color:  #FFFFFF;
-    background-color: #F44336;
+    background-color: #474040;
     border: none;
     border-radius: 25px;
     box-shadow: 0 5px rgba(0, 0, 0, 0.4);
@@ -213,37 +120,132 @@ th {
     margin-right: 2%;
     text-decoration: none;
 }
+
 .cerrar:hover {
-	background-color: #C62828;
+	background-color: black;
 }
 
 .cerrar:active {
-    background-color: #C62828;
+    background-color: black;
     box-shadow: 0 7px rgba(0, 0, 0, 0.6);
     transform: translateY(4px);
 }
 
-
-@media only screen and (max-width:800px) {   
-    .fondo {
-    	width:100%;
-    	overflow-x: scroll;
-    }
-    .tabla {
-    	width:100%;
-   
-    }
-     #formulario {
-    	width:100%;
-    }
-}
-
 footer {
-	Width:100%;
-	height: 100px;
-	font-size: 18px;
+	height: 150px;
+	font-size: 30px;
 	text-align: center;
-	font-family: arial;
-	color: black;
-	margin-top: 10px;
+	font-family: roboto, arial, sans-serif;
+	color: white;
+	margin-top: 20px;
 }
+
+.mdl-button {
+  background-color: gray;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.search-component {
+  position: relative;
+}
+
+.search-component .mdl-button {
+  background-color: unset;
+  color: white;
+  position: absolute;
+  right: 53%;
+  top: 20px;
+}
+
+.search-component .mdl-textfield {
+	width: 44.5%;
+}
+
+.mdl-button:hover {
+	background-color: #D8D8D8;
+}
+
+.AddNewComponent .mdl-button { 
+   background-color: #f44336;
+   top: 87%;
+   left: 91%;
+}
+
+.Adelante .mdl-button {
+	position: relative;
+	margin-left: 43%;
+	background-color: #f44336;
+}
+
+#formulario a {
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  right: 4%
+}
+
+.mdl-data-table th {
+	color: #525354;
+	text-align: center;
+	font-size: 18px;
+}
+
+th {
+	background-color: #b6bdc6;
+}
+
+.mdl-data-table td, .mdl-data-table td .mdl-data-table__select {
+	text-align: left;
+}
+
+.rightbarelement .mdl-textfield {
+	margin-left: 5.5%;
+}
+
+.rightbarelement .mdl-textfield .mdl-textfield__input {
+	width: 100%;
+}
+
+.rightbarelemnt .mdl-textfield .mdl-textfield__label {
+	margin-left: 5%;
+	padding-left: 5%;
+	margin-top: 4px;
+}
+
+@media only screen and (max-width: 480px) {
+	
+	.titulo {
+		font-size: 40px;
+		padding-top: 20px;
+	}
+	
+	.fondo {
+		padding-left: 10px;
+	}
+	
+	.AddNewComponent .mdl-button {
+		left: 65%;
+		z-index: 2;
+	}
+
+	.search-component {
+		width: 130%;	
+	}
+
+	.search-component .mdl-textfield {
+		width: 100%;	
+	}
+
+	#formulario {
+		width: 100%;	
+	}
+
+	.search-component .mdl-button {
+		right: 7px;
+		top: 13px;
+	}
+}
+

@@ -2,38 +2,81 @@
 <html>
   <head>
     <title>Buscador</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel='stylesheet' href='/stylesheets/style.css'/>
+	<link rel='icon' sizes="128x128" href='https://image.flaticon.com/icons/png/512/0/532.png'>
+</head>
 <body id="body">
-  <header>
-       <b class="titulo">¡Guarda Videos!</b>
-      <nav>
-        <a class="menu">Top videos</a>
-       <a class="nuevo" href="#body">Nuevo</a>
-    </nav>
+	<header>
+  		<h1 class="titulo">Guarda Videos</h1>
  </header>
   
-  <div> 
-    <link href="/static/style.css" rel="stylesheet" type="text/css" ></link>
-       <form action = "/process_post/" id="formulario" method = "POST" >
-        <a class="cerrar" href="#">X</a>
-         <h2 class="tituloguardar"> Guarda tu video </h2>
-         <input type= 'url' name='url'  id="url"   placeholder=' Agrega la dirección del video' required/>  <br> </br>
-         <input type= 'text' name='personas' id="personas"     placeholder=' Quién creó el video' /> <br>  </br>      
-         <input type= 'text' name='temas' id="temas"     placeholder=' Agrega los temas relacionados' /> <br> </br>
-         <input type= 'date' name='fechas'  id="fechas"  /> <br> </br>
-         <button class="button" type="submit" >+</button> <br> </br> 
-      </form>
-    </div> 
-  <div class="fondo">     
-     <form action="/search" method="get" class="form 2">
-       <h2 class="lista"> Lista de videos </h2>
-       <label class="bar"for="texto">Filtrar:<label>
-       <input class="Busqueda" id="texto" type="text" name="texto" id="imput2" placeholder="Personas, temas, o urls..."  />
-       <button class="search" type="submit">Buscar</button>
-     </form>
-  <table id="tabla" border="#FFFF00">
+  <div class="AddNewComponent"> 
+ 	 <a class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" href="#body">
+  	 <i class="material-icons">add</i>
+   </a>
+  </div> 
+ 
+  <link href="/static/style.css" rel="stylesheet" type="text/css"></link>
+ 	 <form action = "/process_post/" id="formulario" method = "POST" onsubmit="return validacion()">
+    	 <div class="rightbarelement"> 
+        	 <a class="mdl-button mdl-js-button mdl-button--icon" class="cerrar" href="#">
+        	 <i class="material-icons" style="color: white;">clear</i>
+        </a>            
+ 
+ 	<h2 class="tituloguardar"> Guarda tu video </h2>
+ 
+ <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+ 	<input class="mdl-textfield__input" type="url" id="url" name="url">
+  	<label class="mdl-textfield__label" for="url">Agrega la dirección</label>
+</div>
+  
+ <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="personas" name="personas">
+    <label class="mdl-textfield__label" for="personas">Quién creó el video</label>
+</div>
+  
+ <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+    <input class="mdl-textfield__input" type="text" id="temas" name="temas">
+    <label class="mdl-textfield__label" for="temas">Agrega los temas relacionados</label>
+</div>
+  
+ <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+     <input class="mdl-textfield__input" type="date" id="fechas" name="fechas">
+     <label class="mdl-textfield__label" for="fechas"></label>
+</div>
+    
+ <div class="Adelante">   
+ 	<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style = "color: white;" onclick="console.log(event)">
+    	<i class="material-icons">arrow_forward</i>
+   </button>
+  </div>
+ </form>
+</div> 
+  
+ <div class="fondo">     
+   <div class="container">	
+ 	<form action="/search" method="get" class="form 2">
+    <h2 class="lista"> Filtrar: </h2>
+  <div class="search-component">
+  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    	<input class="mdl-textfield__input" type="text" id="texto" name="texto">
+		<label class="mdl-textfield__label" for="texto">Personas, temas, o urls...</label>
+ </div>
+	<button class="mdl-button mdl-js-button mdl-button--icon">
+    	<i class="material-icons">search</i>
+	 </button>
+    </div>
+ </form>
+</div> 
+ 
+ <div>  
+ 	<table class="mdl-data-table mdl-js-data-table" border="#FFFF00">
      <thead>
      	<tr>
      		<th>Id</th>
@@ -49,9 +92,9 @@
    			<td>
    			<%= listado[i].id %>
    			</td>
-   			<td>
+   			<td><a href="">
    			<%= listado[i].url %>
-   			</td>
+   			</a></td>
    			<td>
    			 <%= listado[i].creador %>
    			</td>
@@ -65,9 +108,12 @@
 	    <% } %>     
       <tbody>
      </table>
-           <footer>
-         © 2018
- </footer>
-    </div>
+    </div> 
+  <footer>
+          &copy; 2018
+       </div>
+      </form>
+     </footer>
+    </div>    
    </body>  
 </html>
